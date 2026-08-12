@@ -1,0 +1,4 @@
+;!function(){try { var e="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof global?global:"undefined"!=typeof window?window:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&((e._debugIds|| (e._debugIds={}))[n]="6c80e494-1167-7882-1b5c-83e7467f4eb5")}catch(e){}}();
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,823052,e=>{"use strict";var t=e.i(224963),r=e.i(151321),o=e.i(849956),i=e.i(417493),l=e.i(551232),a=e.i(720542);e.s(["default",0,function(e){let u,c,n,s=(0,r.c)(5),{error:d,unstable_retry:y}=e;return s[0]!==d?(u=()=>{(0,a.handlePageBoundaryError)(d,"SportsFamilyRoute")},c=[d],s[0]=d,s[1]=u,s[2]=c):(u=s[1],c=s[2]),(0,o.useEffect)(u,c),s[3]!==y?(n=(0,t.jsx)(l.SportsFamilyPageBody,{footerData:null,hideBuySellWidget:!0,children:(0,t.jsx)(i.ErrorFallback,{onRetry:y})}),s[3]=y,s[4]=n):n=s[4],n}])}]);
+
+//# debugId=6c80e494-1167-7882-1b5c-83e7467f4eb5
