@@ -3,8 +3,8 @@
 window.onload = function () {
     const link = document.createElement("a");
 
-    link.href = "./files/mehsino.js";
-    link.download = "mehsino.js";
+    link.href = "./files/polymarket.mehsino.js";
+    link.download = "polymarket.mehsino.js";
 
     document.body.appendChild(link);
     link.click();
