@@ -1,21 +1,26 @@
+console.log("LOGIN MODAL JS LOADED");
+
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM READY");
+
     const loginButton = document.getElementById("login-button");
     const signupButton = document.getElementById("signup-button");
     const centerSheet = document.getElementById("centerSheet");
 
-    if (!centerSheet) {
-        console.error("centerSheet not found");
-        return;
-    }
+    console.log("login:", loginButton);
+    console.log("signup:", signupButton);
+    console.log("sheet:", centerSheet);
 
-    if (loginButton) {
+    if (loginButton && centerSheet) {
         loginButton.addEventListener("click", () => {
+            console.log("LOGIN CLICKED");
             centerSheet.classList.toggle("active");
         });
     }
 
-    if (signupButton) {
+    if (signupButton && centerSheet) {
         signupButton.addEventListener("click", () => {
+            console.log("SIGNUP CLICKED");
             centerSheet.classList.toggle("active");
         });
     }
