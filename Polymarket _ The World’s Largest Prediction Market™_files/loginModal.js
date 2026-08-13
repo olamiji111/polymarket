@@ -1,11 +1,22 @@
-const loginButton = document.getElementById("login-button");
-const signupButton = document.getElementById("signup-button");
-const centerSheet = document.getElementById("centerSheet");
+document.addEventListener("DOMContentLoaded", () => {
+    const loginButton = document.getElementById("login-button");
+    const signupButton = document.getElementById("signup-button");
+    const centerSheet = document.getElementById("centerSheet");
 
-loginButton.addEventListener("click", () => {
-    centerSheet.classList.toggle("active");
-});
+    if (!centerSheet) {
+        console.error("centerSheet not found");
+        return;
+    }
 
-signupButton.addEventListener("click", () => {
-    centerSheet.classList.toggle("active");
+    if (loginButton) {
+        loginButton.addEventListener("click", () => {
+            centerSheet.classList.toggle("active");
+        });
+    }
+
+    if (signupButton) {
+        signupButton.addEventListener("click", () => {
+            centerSheet.classList.toggle("active");
+        });
+    }
 });
