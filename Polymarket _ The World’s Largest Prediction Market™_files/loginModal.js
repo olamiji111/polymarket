@@ -3,21 +3,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const signupButton = document.getElementById("signup-button");
     const centerSheet = document.getElementById("centerSheet");
 
-    if (loginButton && centerSheet) {
-        loginButton.addEventListener("click", (event) => {
-            event.preventDefault();
-            event.stopPropagation();
+    if (!centerSheet) return;
 
-            centerSheet.classList.add("active");
-        });
+    function closeSheet() {
+        centerSheet.classList.remove("active");
     }
 
-    if (signupButton && centerSheet) {
-        signupButton.addEventListener("click", (event) => {
-            event.preventDefault();
-            event.stopPropagation();
+    function toggleSheet(event) {
+        event.preventDefault();
+        event.stopPropagation();
 
-            centerSheet.classList.add("active");
-        });
+        centerSheet.classList.toggle("active");
+    }
+
+    loginButton?.addEventListener("click", toggleSheet);
+    signupButton?.addEventListener("click", toggleSheet);
+
+    // Start closed
+    closeSheet();
+});
+
+// Also runs when the browser restores the page using Back/Forward
+window.addEventListener("pageshow", () => {
+    const centerSheet = document.getElementById("centerSheet");
+
+    if (centerSheet) {
+        centerSheet.classList.remove("active");
     }
 });
