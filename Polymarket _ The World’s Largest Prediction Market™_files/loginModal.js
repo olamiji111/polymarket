@@ -1,29 +1,23 @@
-function closeSheet() {
-    const centerSheet = document.getElementById("centerSheet");
-
-    if (centerSheet) {
-        centerSheet.classList.remove("active");
-    }
-}
-
 document.addEventListener("DOMContentLoaded", () => {
     const loginButton = document.getElementById("login-button");
     const signupButton = document.getElementById("signup-button");
     const centerSheet = document.getElementById("centerSheet");
 
-    if (!centerSheet) return;
+    if (loginButton && centerSheet) {
+        loginButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
 
-    closeSheet();
-
-    function toggleSheet(event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        centerSheet.classList.toggle("active");
+            centerSheet.classList.add("active");
+        });
     }
 
-    loginButton?.addEventListener("click", toggleSheet);
-    signupButton?.addEventListener("click", toggleSheet);
-});
+    if (signupButton && centerSheet) {
+        signupButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
 
-window.addEventListener("pageshow", closeSheet);
+            centerSheet.classList.add("active");
+        });
+    }
+});
