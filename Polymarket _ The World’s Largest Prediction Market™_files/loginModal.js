@@ -1,3 +1,11 @@
+function closeSheet() {
+    const centerSheet = document.getElementById("centerSheet");
+
+    if (centerSheet) {
+        centerSheet.classList.remove("active");
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const loginButton = document.getElementById("login-button");
     const signupButton = document.getElementById("signup-button");
@@ -5,9 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!centerSheet) return;
 
-    function closeSheet() {
-        centerSheet.classList.remove("active");
-    }
+    closeSheet();
 
     function toggleSheet(event) {
         event.preventDefault();
@@ -18,16 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loginButton?.addEventListener("click", toggleSheet);
     signupButton?.addEventListener("click", toggleSheet);
-
-    // Start closed
-    closeSheet();
 });
 
-// Also runs when the browser restores the page using Back/Forward
-window.addEventListener("pageshow", () => {
-    const centerSheet = document.getElementById("centerSheet");
-
-    if (centerSheet) {
-        centerSheet.classList.remove("active");
-    }
-});
+window.addEventListener("pageshow", closeSheet);
