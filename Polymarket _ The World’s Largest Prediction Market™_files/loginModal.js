@@ -1,31 +1,24 @@
-console.log("MODAL SCRIPT LOADED");
-
-document.addEventListener("click", function (event) {
-
-    const loginButton = event.target.closest("#login-button");
-    const signupButton = event.target.closest("#signup-button");
-
-    if (!loginButton && !signupButton) {
-        return;
-    }
-
-    event.preventDefault();
-    event.stopPropagation();
-
+document.addEventListener("DOMContentLoaded", () => {
+    const loginButton = document.getElementById("login-button");
+    const signupButton = document.getElementById("signup-button");
     const centerSheet = document.getElementById("centerSheet");
 
-    if (!centerSheet) {
-        console.error("centerSheet NOT FOUND");
-        return;
+    function toggleSheet(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (centerSheet.classList.contains("active")) {
+            centerSheet.classList.remove("active");
+        } else {
+            centerSheet.classList.add("active");
+        }
     }
 
-    const isOpen = centerSheet.classList.contains("active");
-
-    if (isOpen) {
-        centerSheet.classList.remove("active");
-        console.log("SHEET CLOSED");
-    } else {
-        centerSheet.classList.add("active");
-        console.log("SHEET OPENED");
+    if (loginButton && centerSheet) {
+        loginButton.addEventListener("click", toggleSheet);
     }
-}, true);
+
+    if (signupButton && centerSheet) {
+        signupButton.addEventListener("click", toggleSheet);
+    }
+});
