@@ -991,7 +991,7 @@
           display: none;
           position: fixed;
           inset: 0;
-          z-index: 9999;
+          z-index: 9999 !important;
 
           align-items: center;
           justify-content: center;
@@ -1004,12 +1004,20 @@
         }
 
         .center-sheets {
+          position: relative;
+          z-index: 10001;
           width: 450px;
           max-width: 90%;
           padding: 24px;
           background: white;
           border-radius: 16px;
           height: fit-content;
+        }
+
+        #login-button,
+        #signup-button {
+          position: relative;
+          z-index: 10000 !important;
         }
 
         .bprogress .indeterminate {
@@ -1375,15 +1383,320 @@
 
                       <div class="center-sheets">
 
-                        <h2>Log in</h2>
-
-                        <p>Your login content goes here.</p>
-
-                        <button id="closeSheet" type="button">
-
-                          Close
-
-                        </button>
+                        <div class="flex flex-col gap-4 overflow-y-auto p-6"><span class="sr-only">
+                            <h2 id="radix-_r_8g_" data-slot="modal-title" class="text-xl font-semibold">Authentication
+                            </h2>
+                            <p id="radix-_r_8h_" data-slot="modal-description"
+                              class="-mt-1 text-sm text-text-secondary font-medium [&amp;_a]:text-text-brand [&amp;_a]:hover:underline">
+                              Authentication</p>
+                          </span>
+                          <div class="flex min-h-0 flex-col">
+                            <div class="flex flex-col">
+                              <div class="hidden"></div>
+                              <div class="flex-1">
+                                <div class="hidden"></div>
+                                <div class="flex flex-col items-center w-full gap-[18px]">
+                                  <div class="flex flex-col items-center">
+                                    <p class="font-semibold text-xl">Welcome to Polymarket</p>
+                                  </div><button type="button" data-polykit="true" data-slot="button"
+                                    data-variant="primary" data-size="lg" data-corners="square" data-theme="blue"
+                                    class="inline-flex items-center justify-center shrink-0 cursor-pointer select-none outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-secondary focus-visible:ring-offset-surface font-semibold transition-[color,background-color,border-color,scale] duration-[120ms] ease-out active:scale-[0.98] disabled:pointer-events-none motion-reduce:transition-none motion-reduce:active:scale-100 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-5 group/button disabled:bg-gray-200 disabled:text-gray-50 disabled:[&amp;_[data-slot=prefix]]:text-gray-50 h-[52px] px-4 gap-1 rounded-[16px] text-heading-lg bg-[var(--button-bg)] text-[var(--button-fg)] hover:bg-[var(--button-hover-bg)] [&amp;_[data-slot=prefix]]:text-[var(--button-prefix)] enabled:dark:[&amp;_[data-slot=prefix]]:text-[var(--button-prefix-dark)] w-full"
+                                    style="--button-bg: var(--color-blue-600); --button-hover-bg: var(--color-blue-700); --button-fg: var(--color-white); --button-prefix: var(--color-alpha-white-800); --button-prefix-dark: var(--color-alpha-white-800);"><svg
+                                      xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                      class="size-4 text-white fill-white relative">
+                                      <g fill="currentColor">
+                                        <path
+                                          d="M29.44 16.318c0-.993-.089-1.947-.255-2.864H16v5.422h7.535c-.331 1.744-1.324 3.22-2.813 4.213v3.525h4.544c2.647-2.444 4.175-6.033 4.175-10.296Z">
+                                        </path>
+                                        <path
+                                          d="M16 30c3.78 0 6.949-1.247 9.265-3.385l-4.544-3.525c-1.247.84-2.838 1.349-4.722 1.349-3.64 0-6.733-2.456-7.84-5.765l-2.717 2.09-1.941 1.525c2.304 4.569 7.025 7.713 12.498 7.713Z">
+                                        </path>
+                                        <path
+                                          d="M8.16 18.66c-.28-.84-.445-1.731-.445-2.66s.165-1.82.445-2.66V9.725H3.502C2.547 11.609 2 13.734 2 16s.547 4.391 1.502 6.275h3.332z">
+                                        </path>
+                                        <path
+                                          d="M16 7.575c2.062 0 3.895.713 5.358 2.087l4.009-4.009C22.936 3.388 19.78 2 16 2 10.527 2 5.805 5.144 3.502 9.725L8.16 13.34c1.107-3.309 4.2-5.765 7.84-5.765">
+                                        </path>
+                                      </g>
+                                    </svg><span data-slot="label"
+                                      class="inline-flex items-center shrink-0 gap-1 px-1.5"><span>Continue with
+                                        Google</span></span></button>
+                                  <div class="flex w-full justify-center items-center my-1 gap-4">
+                                    <div class="flex-1 h-px bg-border"></div><span
+                                      class="text-sm font-medium text-text-secondary">OR</span>
+                                    <div class="flex-1 h-px bg-border"></div>
+                                  </div>
+                                  <form novalidate=""
+                                    class="relative w-full h-14 border border-border-light rounded-lg overflow-hidden transition-colors focus-within:ring-2 ring-brand-500/70 ">
+                                    <input
+                                      class="flex rounded-md px-3 py-1 text-sm autofill:!bg-transparent text-text file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-text-tertiary focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 bg-transparent border border-border focus-visible:bg-transparent ring-0 ring-brand-500/70 transition-[box-shadow] duration-200 focus-visible:ring-2 w-full h-full !border-0 !rounded-none focus-visible:!ring-0 hover:!bg-transparent !pr-[110px]"
+                                      id="magic-email-input" placeholder="Email address" type="email" name="email">
+                                    <div class="absolute right-2 w-full max-w-[90px] top-1/2 -translate-y-1/2 z-10">
+                                      <button type="submit" data-polykit="true" data-slot="button"
+                                        data-variant="primary" data-size="default" data-corners="square"
+                                        data-theme="blue"
+                                        class="inline-flex items-center justify-center shrink-0 cursor-pointer select-none outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-secondary focus-visible:ring-offset-surface font-semibold transition-[color,background-color,border-color,scale] duration-[120ms] ease-out active:scale-[0.98] disabled:pointer-events-none motion-reduce:transition-none motion-reduce:active:scale-100 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-5 group/button disabled:bg-gray-200 disabled:text-gray-50 disabled:[&amp;_[data-slot=prefix]]:text-gray-50 h-10 px-2.5 rounded-[12px] text-heading-base bg-[var(--button-bg)] text-[var(--button-fg)] hover:bg-[var(--button-hover-bg)] [&amp;_[data-slot=prefix]]:text-[var(--button-prefix)] enabled:dark:[&amp;_[data-slot=prefix]]:text-[var(--button-prefix-dark)] w-full"
+                                        disabled=""
+                                        style="--button-bg: var(--color-blue-600); --button-hover-bg: var(--color-blue-700); --button-fg: var(--color-white); --button-prefix: var(--color-alpha-white-800); --button-prefix-dark: var(--color-alpha-white-800);"><span
+                                          data-slot="label"
+                                          class="inline-flex items-center shrink-0 gap-1 px-1.5">Continue</span></button>
+                                    </div>
+                                  </form>
+                                  <div class="grid w-full flex-1 grid-cols-4 gap-[18px]"><button
+                                      class="inline-flex items-center cursor-pointer active:scale-[97%] transition duration-150 justify-center gap-2 whitespace-nowrap rounded-sm text-body-base font-semibold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 border border-button-outline-border text-button-outline-text hover:bg-neutral-25 dark:border-none dark:bg-button-secondary-bg dark:text-button-secondary-text dark:hover:bg-button-secondary-bg-hover h-14 w-full p-2 disabled:opacity-50 disabled:cursor-default"
+                                      aria-label="Continue with Steam"><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="32" height="32" viewBox="0 0 32 32" class="w-8 h-8">
+                                        <rect width="32" height="32" fill="#1b2838" rx="9"></rect>
+                                        <path fill="#fff"
+                                          d="M15.979 4C9.678 4 4.511 8.86 4.022 15.037l6.432 2.658a3.4 3.4 0 0 1 1.912-.59q.094.002.188.006l2.861-4.142v-.059a4.53 4.53 0 0 1 4.524-4.524c2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911q.002.078.004.159a3.39 3.39 0 0 1-3.39 3.396 3.41 3.41 0 0 1-3.331-2.727L4.436 19.27C5.862 24.307 10.486 28 15.979 28c6.627 0 11.999-5.373 11.999-12S22.605 4 15.979 4M11.54 22.21l-1.473-.61c.262.543.714.999 1.314 1.25a2.551 2.551 0 0 0 3.337-3.324 2.547 2.547 0 0 0-3.255-1.413l1.523.63a1.878 1.878 0 0 1-1.445 3.468h-.001zm11.415-9.303a3.02 3.02 0 0 0-3.015-3.015 3.015 3.015 0 1 0 3.015 3.015m-5.273-.005a2.264 2.264 0 1 1 4.531 0 2.267 2.267 0 0 1-2.266 2.265 2.264 2.264 0 0 1-2.265-2.265">
+                                        </path>
+                                      </svg></button><button
+                                      class="inline-flex items-center cursor-pointer active:scale-[97%] transition duration-150 justify-center gap-2 whitespace-nowrap rounded-sm text-body-base font-semibold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 border border-button-outline-border text-button-outline-text hover:bg-neutral-25 dark:border-none dark:bg-button-secondary-bg dark:text-button-secondary-text dark:hover:bg-button-secondary-bg-hover h-14 w-full p-2 disabled:opacity-50 disabled:cursor-default">
+                                      <div class="w-8 h-8"><svg width="32" height="32" viewBox="0 0 142 136.878"
+                                          fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M132.682,132.192l-30.583-9.106l-23.063,13.787l-16.092-0.007l-23.077-13.78l-30.569,9.106L0,100.801
+            l9.299-34.839L0,36.507L9.299,0l47.766,28.538h27.85L132.682,0l9.299,36.507l-9.299,29.455l9.299,34.839L132.682,132.192
+            L132.682,132.192z" fill="#FF5C16"></path>
+                                          <path d="M9.305,0l47.767,28.558l-1.899,19.599L9.305,0z M39.875,100.814l21.017,16.01l-21.017,6.261
+            C39.875,123.085,39.875,100.814,39.875,100.814z M59.212,74.345l-4.039-26.174L29.317,65.97l-0.014-0.007v0.013l0.08,18.321
+            l10.485-9.951L59.212,74.345L59.212,74.345z M132.682,0L84.915,28.558l1.893,19.599L132.682,0z M102.113,100.814l-21.018,16.01
+            l21.018,6.261V100.814z M112.678,65.975h0.007H112.678v-0.013l-0.006,0.007L86.815,48.171l-4.039,26.174h19.336l10.492,9.95
+            C112.604,84.295,112.678,65.975,112.678,65.975z" fill="#FF5C16"></path>
+                                          <path d="M39.868,123.085l-30.569,9.106L0,100.814h39.868C39.868,100.814,39.868,123.085,39.868,123.085z
+            M59.205,74.338l5.839,37.84l-8.093-21.04L29.37,84.295l10.491-9.956h19.344L59.205,74.338z M102.112,123.085l30.57,9.106
+            l9.299-31.378h-39.869C102.112,100.814,102.112,123.085,102.112,123.085z M82.776,74.338l-5.839,37.84l8.092-21.04l27.583-6.843
+            l-10.498-9.956H82.776V74.338z" fill="#E34807"></path>
+                                          <path d="M0,100.801l9.299-34.839h19.997l0.073,18.327l27.584,6.843l8.092,21.039l-4.16,4.633l-21.017-16.01H0
+            V100.801z M141.981,100.801l-9.299-34.839h-19.998l-0.073,18.327l-27.582,6.843l-8.093,21.039l4.159,4.633l21.018-16.01h39.868
+            V100.801z M84.915,28.538h-27.85l-1.891,19.599l9.872,64.013h11.891l9.878-64.013L84.915,28.538z"
+                                            fill="#FF8D5D"></path>
+                                          <path
+                                            d="M9.299,0L0,36.507l9.299,29.455h19.997l25.87-17.804L9.299,0z M53.426,81.938h-9.059l-4.932,4.835
+            l17.524,4.344l-3.533-9.186V81.938z M132.682,0l9.299,36.507l-9.299,29.455h-19.998L86.815,48.158L132.682,0z M88.568,81.938h9.072
+            l4.932,4.841l-17.544,4.353l3.54-9.201V81.938z M79.029,124.385l2.067-7.567l-4.16-4.633h-11.9l-4.159,4.633l2.066,7.567"
+                                            fill="#661800"></path>
+                                          <path d="M79.029,124.384v12.495H62.945v-12.495L79.029,124.384L79.029,124.384z"
+                                            fill="#C0C4CD"></path>
+                                          <path d="M39.875,123.072l23.083,13.8v-12.495l-2.067-7.566C60.891,116.811,39.875,123.072,39.875,123.072z
+            M102.113,123.072l-23.084,13.8v-12.495l2.067-7.566C81.096,116.811,102.113,123.072,102.113,123.072z"
+                                            fill="#E7EBF6"></path>
+                                        </svg></div>
+                                    </button><button
+                                      class="inline-flex items-center cursor-pointer active:scale-[97%] transition duration-150 justify-center gap-2 whitespace-nowrap rounded-sm text-body-base font-semibold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 border border-button-outline-border text-button-outline-text hover:bg-neutral-25 dark:border-none dark:bg-button-secondary-bg dark:text-button-secondary-text dark:hover:bg-button-secondary-bg-hover h-14 w-full p-2 disabled:opacity-50 disabled:cursor-default">
+                                      <div class="w-8 h-8"><svg width="32" height="32" viewBox="0 0 20 20" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <circle cx="10" cy="10" r="10" fill="#0052FF"></circle>
+                                          <rect rx="27%" width="20" height="20" fill="#0052FF"></rect>
+                                          <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M10.0001 17C13.8661 17 17.0001 13.866 17.0001 10C17.0001 6.13401 13.8661 3 10.0001 3C6.13413 3 3.00012 6.13401 3.00012 10C3.00012 13.866 6.13413 17 10.0001 17ZM8.25012 7.71429C7.95427 7.71429 7.71441 7.95414 7.71441 8.25V11.75C7.71441 12.0459 7.95427 12.2857 8.25012 12.2857H11.7501C12.046 12.2857 12.2858 12.0459 12.2858 11.75V8.25C12.2858 7.95414 12.046 7.71429 11.7501 7.71429H8.25012Z"
+                                            fill="white"></path>
+                                        </svg></div>
+                                    </button><a
+                                      class="inline-flex items-center cursor-pointer active:scale-[97%] transition duration-150 justify-center gap-2 whitespace-nowrap rounded-sm text-body-base font-semibold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 border border-button-outline-border text-button-outline-text hover:bg-neutral-25 dark:border-none dark:bg-button-secondary-bg dark:text-button-secondary-text dark:hover:bg-button-secondary-bg-hover h-14 w-full p-2 disabled:opacity-50 disabled:cursor-default"
+                                      href="https://phantom.app/download/" target="_blank" rel="noopener noreferrer">
+                                      <div class="w-8 h-8"><svg width="32" height="32" viewBox="0 0 88 88" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          style="background: rgb(171, 159, 242); border-radius: 27.5%;">
+                                          <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M37.7425 57.0705C34.1942 62.3362 28.2483 69 20.3366 69C16.5965 69 13.0001 67.5093 13 61.0322C12.9997 44.5362 36.2555 19.0003 57.8334 19C70.1084 18.9998 75 27.2474 75 36.6136C75 48.6357 66.9442 62.3824 58.9368 62.3824C56.3955 62.3824 55.1487 61.031 55.1487 58.888C55.1487 58.3288 55.2442 57.7228 55.4365 57.0705C52.7029 61.5902 47.4285 65.7849 42.4896 65.7849C38.8933 65.7849 37.0713 63.5944 37.0713 60.5187C37.0713 59.4003 37.311 58.2357 37.7425 57.0705ZM53.7586 31.6834C51.8054 31.6868 50.4738 33.2938 50.478 35.5864C50.4822 37.879 51.8198 39.5273 53.7729 39.5241C55.6789 39.5208 57.0099 37.8679 57.0058 35.5752C57.0016 33.2827 55.6646 31.6802 53.7586 31.6834ZM64.1193 31.6725C62.1661 31.6759 60.8345 33.2829 60.8387 35.5755C60.8429 37.868 62.1798 39.5164 64.1336 39.5131C66.0396 39.5099 67.3706 37.8569 67.3664 35.5643C67.3622 33.2718 66.0253 31.6693 64.1193 31.6725Z"
+                                            fill="#ffffff"></path>
+                                        </svg></div>
+                                    </a><button
+                                      class="inline-flex items-center cursor-pointer active:scale-[97%] transition duration-150 justify-center gap-2 whitespace-nowrap rounded-sm text-body-base font-semibold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 border border-button-outline-border text-button-outline-text hover:bg-neutral-25 dark:border-none dark:bg-button-secondary-bg dark:text-button-secondary-text dark:hover:bg-button-secondary-bg-hover h-14 w-full p-2 disabled:opacity-50 disabled:cursor-default">
+                                      <div class="w-8 h-8"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                          width="32px" height="32px" viewBox="0 0 512 513"
+                                          enable-background="new 0 0 512 513" style="border-radius: 27.5%;">
+                                          <path fill="#FFFFFF" opacity="1.000000" stroke="none" d="
+M333.000000,514.000000 
+	C222.026932,514.000000 111.553864,514.000000 1.040397,514.000000 
+	C1.040397,343.068604 1.040397,172.137222 1.040397,1.102912 
+	C171.556396,1.102912 342.112885,1.102912 512.834717,1.102912 
+	C512.834717,171.999863 512.834717,342.999908 512.834717,514.000000 
+	C453.137177,514.000000 393.318573,514.000000 333.000000,514.000000 
+M149.500153,106.296974 
+	C137.679108,106.296974 125.858002,106.275078 114.037025,106.305374 
+	C107.193314,106.322906 105.007622,108.477486 105.003799,115.206032 
+	C104.987999,143.010406 104.988739,170.814774 105.003159,198.619141 
+	C105.006721,205.496872 107.116180,207.685822 113.862015,207.692139 
+	C141.666367,207.718124 169.470764,207.719223 197.275101,207.691544 
+	C204.219543,207.684631 206.277847,205.671249 206.286438,198.803192 
+	C206.321213,170.998871 206.318512,143.194443 206.288712,115.390106 
+	C206.281113,108.297028 204.189957,106.308426 196.951782,106.301506 
+	C181.467926,106.286697 165.984039,106.296967 149.500153,106.296974 
+M360.499817,207.703033 
+	C373.486572,207.703018 386.473297,207.713654 399.460052,207.698898 
+	C406.866913,207.690491 408.997681,205.585556 408.999725,198.283096 
+	C409.007416,170.811203 409.006287,143.339310 409.000549,115.867424 
+	C408.998962,108.322479 407.041901,106.305756 399.638947,106.302231 
+	C372.000549,106.289101 344.362183,106.288246 316.723785,106.303131 
+	C309.831238,106.306847 307.716339,108.339226 307.708130,115.158676 
+	C307.674622,142.963516 307.676483,170.768433 307.706360,198.573288 
+	C307.713928,205.633774 309.844757,207.682373 317.043213,207.695450 
+	C331.195374,207.721176 345.347565,207.703033 360.499817,207.703033 
+M307.835571,272.500061 
+	C307.835571,254.020844 307.852997,235.541595 307.826691,217.062424 
+	C307.816620,209.980988 305.624878,207.714005 298.695282,207.706848 
+	C270.893219,207.678146 243.091080,207.681274 215.289017,207.704651 
+	C208.539688,207.710327 206.316681,209.920135 206.309784,216.679733 
+	C206.281433,244.481796 206.279022,272.283936 206.311646,300.085968 
+	C206.319443,306.731720 208.657730,308.989594 215.404510,308.994232 
+	C243.206589,309.013367 271.008698,309.015533 298.810791,308.992523 
+	C305.475708,308.987030 307.788635,306.663483 307.824036,299.970306 
+	C307.870728,291.147125 307.835541,282.323547 307.835571,272.500061 
+M206.295914,361.500183 
+	C206.295914,347.347748 206.303299,333.195282 206.293137,319.042847 
+	C206.287186,310.746338 204.582611,309.003357 196.495056,309.002045 
+	C169.189148,308.997620 141.883240,308.996155 114.577332,309.003113 
+	C107.017197,309.005066 105.008812,310.947021 105.005447,318.319336 
+	C104.992844,345.958252 104.993156,373.597137 105.005539,401.236053 
+	C105.008606,408.084229 107.071625,410.273865 113.809303,410.283661 
+	C141.614655,410.324066 169.420135,410.320862 197.225494,410.286896 
+	C204.391434,410.278137 206.271317,408.301575 206.287842,400.961578 
+	C206.316681,388.141205 206.295898,375.320709 206.295914,361.500183 
+M405.272217,309.830139 
+	C403.497650,309.553558 401.723541,309.039185 399.948486,309.035950 
+	C372.128693,308.985260 344.308807,308.990540 316.488922,309.007721 
+	C309.933502,309.011780 307.731995,311.087433 307.720886,317.582550 
+	C307.672699,345.735504 307.675659,373.888641 307.718475,402.041626 
+	C307.727783,408.170410 309.704224,410.249603 315.823975,410.265076 
+	C344.143433,410.336578 372.463196,410.331268 400.782715,410.270630 
+	C406.739746,410.257874 408.978577,407.959930 408.985138,402.144501 
+	C409.017090,373.824921 409.069275,345.504791 408.871033,317.186523 
+	C408.854675,314.844818 407.022522,312.515839 405.272217,309.830139 
+z"></path>
+                                          <path fill="#020202" opacity="1.000000" stroke="none" d="
+M150.000153,106.296974 
+	C165.984039,106.296967 181.467926,106.286697 196.951782,106.301506 
+	C204.189957,106.308426 206.281113,108.297028 206.288712,115.390106 
+	C206.318512,143.194443 206.321213,170.998871 206.286438,198.803192 
+	C206.277847,205.671249 204.219543,207.684631 197.275101,207.691544 
+	C169.470764,207.719223 141.666367,207.718124 113.862015,207.692139 
+	C107.116180,207.685822 105.006721,205.496872 105.003159,198.619141 
+	C104.988739,170.814774 104.987999,143.010406 105.003799,115.206032 
+	C105.007622,108.477486 107.193314,106.322906 114.037025,106.305374 
+	C125.858002,106.275078 137.679108,106.296974 150.000153,106.296974 
+z"></path>
+                                          <path fill="#020202" opacity="1.000000" stroke="none" d="
+M359.999786,207.703033 
+	C345.347565,207.703033 331.195374,207.721176 317.043213,207.695450 
+	C309.844757,207.682373 307.713928,205.633774 307.706360,198.573288 
+	C307.676483,170.768433 307.674622,142.963516 307.708130,115.158676 
+	C307.716339,108.339226 309.831238,106.306847 316.723785,106.303131 
+	C344.362183,106.288246 372.000549,106.289101 399.638947,106.302231 
+	C407.041901,106.305756 408.998962,108.322479 409.000549,115.867424 
+	C409.006287,143.339310 409.007416,170.811203 408.999725,198.283096 
+	C408.997681,205.585556 406.866913,207.690491 399.460052,207.698898 
+	C386.473297,207.713654 373.486572,207.703018 359.999786,207.703033 
+z"></path>
+                                          <path fill="#010101" opacity="1.000000" stroke="none" d="
+M307.835571,273.000092 
+	C307.835541,282.323547 307.870728,291.147125 307.824036,299.970306 
+	C307.788635,306.663483 305.475708,308.987030 298.810791,308.992523 
+	C271.008698,309.015533 243.206589,309.013367 215.404510,308.994232 
+	C208.657730,308.989594 206.319443,306.731720 206.311646,300.085968 
+	C206.279022,272.283936 206.281433,244.481796 206.309784,216.679733 
+	C206.316681,209.920135 208.539688,207.710327 215.289017,207.704651 
+	C243.091080,207.681274 270.893219,207.678146 298.695282,207.706848 
+	C305.624878,207.714005 307.816620,209.980988 307.826691,217.062424 
+	C307.852997,235.541595 307.835571,254.020844 307.835571,273.000092 
+z"></path>
+                                          <path fill="#000000" opacity="1.000000" stroke="none" d="
+M206.295914,362.000214 
+	C206.295898,375.320709 206.316681,388.141205 206.287842,400.961578 
+	C206.271317,408.301575 204.391434,410.278137 197.225494,410.286896 
+	C169.420135,410.320862 141.614655,410.324066 113.809303,410.283661 
+	C107.071625,410.273865 105.008606,408.084229 105.005539,401.236053 
+	C104.993156,373.597137 104.992844,345.958252 105.005447,318.319336 
+	C105.008812,310.947021 107.017197,309.005066 114.577332,309.003113 
+	C141.883240,308.996155 169.189148,308.997620 196.495056,309.002045 
+	C204.582611,309.003357 206.287186,310.746338 206.293137,319.042847 
+	C206.303299,333.195282 206.295914,347.347748 206.295914,362.000214 
+z"></path>
+                                          <path fill="#000000" opacity="1.000000" stroke="none" d="
+M405.653137,310.005554 
+	C407.022522,312.515839 408.854675,314.844818 408.871033,317.186523 
+	C409.069275,345.504791 409.017090,373.824921 408.985138,402.144501 
+	C408.978577,407.959930 406.739746,410.257874 400.782715,410.270630 
+	C372.463196,410.331268 344.143433,410.336578 315.823975,410.265076 
+	C309.704224,410.249603 307.727783,408.170410 307.718475,402.041626 
+	C307.675659,373.888641 307.672699,345.735504 307.720886,317.582550 
+	C307.731995,311.087433 309.933502,309.011780 316.488922,309.007721 
+	C344.308807,308.990540 372.128693,308.985260 399.948486,309.035950 
+	C401.723541,309.039185 403.497650,309.553558 405.653137,310.005554 
+z"></path>
+                                        </svg></div>
+                                    </button><button
+                                      class="inline-flex items-center cursor-pointer active:scale-[97%] transition duration-150 justify-center gap-2 whitespace-nowrap rounded-sm text-body-base font-semibold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 border border-button-outline-border text-button-outline-text hover:bg-neutral-25 dark:border-none dark:bg-button-secondary-bg dark:text-button-secondary-text dark:hover:bg-button-secondary-bg-hover h-14 w-full p-2 disabled:opacity-50 disabled:cursor-default">
+                                      <div class="w-8 h-8"><svg width="32" height="32" viewBox="0 0 512 512" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg" style="border-radius: 27.5%;">
+                                          <rect width="512" height="512" fill="#001F29"></rect>
+                                          <path
+                                            d="M219.948 95.7022C201.623 95.6929 183.33 95.6835 164.941 95.7116C153.822 95.7116 149.651 109.671 157.921 117.939L283.098 243.117C287.004 246.69 289.441 250.574 289.53 255.693C289.441 260.812 287.004 264.696 283.098 268.269L157.921 393.446C149.651 401.715 153.822 415.674 164.941 415.674C183.33 415.702 201.623 415.693 219.948 415.683C229.122 415.679 238.305 415.674 247.511 415.674C259.555 415.674 266.72 409.24 273.154 402.805L386.047 289.912C395.057 280.902 403.119 268.939 403.009 255.693C403.119 242.447 395.057 230.484 386.047 221.474L273.154 108.58C266.72 102.146 259.555 95.7116 247.511 95.7116C238.305 95.7116 229.122 95.7069 219.948 95.7022Z"
+                                            fill="#00F0FF"></path>
+                                        </svg></div>
+                                    </button><button
+                                      class="inline-flex items-center cursor-pointer active:scale-[97%] transition duration-150 justify-center gap-2 whitespace-nowrap rounded-sm text-body-base font-semibold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 border border-button-outline-border text-button-outline-text hover:bg-neutral-25 dark:border-none dark:bg-button-secondary-bg dark:text-button-secondary-text dark:hover:bg-button-secondary-bg-hover h-14 w-full p-2 disabled:opacity-50 disabled:cursor-default">
+                                      <div class="w-8 h-8"><svg width="42" height="42" viewBox="0 0 32 32" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          style="position: relative; top: -5px; left: -5px;">
+                                          <path
+                                            d="M9.58818 11.8556C13.1293 8.31442 18.8706 8.31442 22.4117 11.8556L22.8379 12.2818C23.015 12.4588 23.015 12.7459 22.8379 12.9229L21.3801 14.3808C21.2915 14.4693 21.148 14.4693 21.0595 14.3808L20.473 13.7943C18.0026 11.3239 13.9973 11.3239 11.5269 13.7943L10.8989 14.4223C10.8104 14.5109 10.6668 14.5109 10.5783 14.4223L9.12041 12.9645C8.94336 12.7875 8.94336 12.5004 9.12041 12.3234L9.58818 11.8556ZM25.4268 14.8706L26.7243 16.1682C26.9013 16.3452 26.9013 16.6323 26.7243 16.8093L20.8737 22.6599C20.6966 22.8371 20.4096 22.8371 20.2325 22.6599L16.0802 18.5076C16.0359 18.4634 15.9641 18.4634 15.9199 18.5076L11.7675 22.6599C11.5905 22.8371 11.3034 22.8371 11.1264 22.66C11.1264 22.66 11.1264 22.6599 11.1264 22.6599L5.27561 16.8092C5.09856 16.6322 5.09856 16.3451 5.27561 16.168L6.57313 14.8706C6.75019 14.6934 7.03726 14.6934 7.21431 14.8706L11.3668 19.023C11.411 19.0672 11.4828 19.0672 11.5271 19.023L15.6793 14.8706C15.8563 14.6934 16.1434 14.6934 16.3205 14.8706L20.473 19.023C20.5172 19.0672 20.589 19.0672 20.6332 19.023L24.7856 14.8706C24.9627 14.6935 25.2498 14.6935 25.4268 14.8706Z"
+                                            fill="#3B99FC"></path>
+                                        </svg></div>
+                                    </button><a
+                                      class="inline-flex items-center cursor-pointer active:scale-[97%] transition duration-150 justify-center gap-2 whitespace-nowrap rounded-sm text-body-base font-semibold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 border border-button-outline-border text-button-outline-text hover:bg-neutral-25 dark:border-none dark:bg-button-secondary-bg dark:text-button-secondary-text dark:hover:bg-button-secondary-bg-hover h-14 w-full p-2 disabled:opacity-50 disabled:cursor-default"
+                                      href="https://rabby.io" target="_blank" rel="noopener noreferrer">
+                                      <div class="w-8 h-8"><svg width="32" height="32" viewBox="0 0 88 88" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          style="background: rgb(134, 151, 255); border-radius: 27%;">
+                                          <path
+                                            d="M76.2062 48.0657C78.7621 42.356 66.1267 26.404 54.0555 19.7581C46.4467 14.6095 38.5183 15.3169 36.9125 17.5775C33.3886 22.5385 48.5814 26.7423 58.742 31.6478C56.5579 32.5964 54.4996 34.2987 53.2893 36.4758C49.5013 32.3404 41.1872 28.7791 31.4315 31.6478C24.8574 33.5809 19.3937 38.1382 17.2821 45.0216C16.7689 44.7936 16.2009 44.6669 15.6032 44.6669C13.3176 44.6669 11.4648 46.5197 11.4648 48.8052C11.4648 51.0908 13.3176 52.9435 15.6032 52.9435C16.0268 52.9435 17.3514 52.6594 17.3514 52.6594L38.5183 52.8128C30.0532 66.2418 23.3634 68.2049 23.3634 70.5314C23.3634 72.8579 29.7643 72.2274 32.1678 71.3602C43.6732 67.2088 56.0306 54.2706 58.1511 50.5462C67.056 51.6572 74.5397 51.7886 76.2062 48.0657Z"
+                                            fill="url(#paint0_linear_60607_36577)"></path>
+                                          <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M58.65 31.6053C58.682 31.6193 58.7139 31.6332 58.7458 31.6471C59.2168 31.4616 59.1406 30.766 59.0113 30.2198C58.714 28.9643 53.5856 23.9001 48.7696 21.6318C42.1984 18.5367 37.3618 18.7007 36.6582 20.1307C37.9975 22.8695 44.1927 25.441 50.663 28.1266C53.3909 29.2589 56.1676 30.4114 58.65 31.6053Z"
+                                            fill="url(#paint1_linear_60607_36577)"></path>
+                                          <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M50.4154 59.2247C49.0895 58.7182 47.592 58.2536 45.8898 57.8319C47.707 54.5801 48.0884 49.7663 46.3721 46.7226C43.9635 42.4512 40.9399 40.1777 33.9139 40.1777C30.0495 40.1777 19.6451 41.4794 19.4603 50.1648C19.441 51.0763 19.4599 51.9118 19.5259 52.68L38.5175 52.8176C35.9568 56.8798 33.5586 59.8928 31.4589 62.1841C33.9831 62.8309 36.0657 63.3738 37.9775 63.8722C39.7885 64.3443 41.4462 64.7764 43.1809 65.2191C45.8007 63.3102 48.2635 61.2288 50.4154 59.2247Z"
+                                            fill="url(#paint2_linear_60607_36577)"></path>
+                                          <path
+                                            d="M17.0296 51.7821C17.8058 58.38 21.5555 60.9657 29.2177 61.7309C36.8799 62.4961 41.2751 61.9828 47.1265 62.5151C52.0136 62.9598 56.3772 65.4502 57.996 64.5895C59.4529 63.815 58.6378 61.0167 56.6884 59.2214C54.1614 56.8943 50.6641 55.2763 44.5104 54.7021C45.7368 51.3443 45.3931 46.6362 43.4885 44.0748C40.7345 40.3711 35.6513 38.6967 29.2177 39.4282C22.4962 40.1926 16.0556 43.5018 17.0296 51.7821Z"
+                                            fill="url(#paint3_linear_60607_36577)"></path>
+                                          <defs>
+                                            <linearGradient id="paint0_linear_60607_36577" x1="30.666" y1="43.0094"
+                                              x2="75.6558" y2="55.7677" gradientUnits="userSpaceOnUse">
+                                              <stop stop-color="white"></stop>
+                                              <stop offset="1" stop-color="white"></stop>
+                                            </linearGradient>
+                                            <linearGradient id="paint1_linear_60607_36577" x1="68.0842" y1="42.1521"
+                                              x2="35.6221" y2="9.60636" gradientUnits="userSpaceOnUse">
+                                              <stop stop-color="#7258DC"></stop>
+                                              <stop offset="1" stop-color="#797DEA" stop-opacity="0"></stop>
+                                            </linearGradient>
+                                            <linearGradient id="paint2_linear_60607_36577" x1="51.3184" y1="60.3591"
+                                              x2="20.1383" y2="42.4347" gradientUnits="userSpaceOnUse">
+                                              <stop stop-color="#7461EA"></stop>
+                                              <stop offset="1" stop-color="#BFC2FF" stop-opacity="0"></stop>
+                                            </linearGradient>
+                                            <linearGradient id="paint3_linear_60607_36577" x1="33.3531" y1="42.6732"
+                                              x2="54.4308" y2="69.4547" gradientUnits="userSpaceOnUse">
+                                              <stop stop-color="white"></stop>
+                                              <stop offset="0.983895" stop-color="#D5CEFF"></stop>
+                                            </linearGradient>
+                                          </defs>
+                                        </svg></div>
+                                    </a></div>
+                                  <div class="w-full flex justify-center items-center gap-1.5"><a href="/tos"
+                                      target="_blank" rel="noopener noreferrer"
+                                      class="text-text-secondary text-xs font-medium transition-colors duration-200 hover:text-text-tertiary">Terms</a><span
+                                      class="select-none text-text-secondary text-xs">•</span><a href="/privacy"
+                                      target="_blank" rel="noopener noreferrer"
+                                      class="text-text-secondary text-xs font-medium transition-colors duration-200 hover:text-text-tertiary">Privacy</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
 
                       </div>
 
