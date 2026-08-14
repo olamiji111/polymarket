@@ -3,21 +3,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const signupButton = document.getElementById("signup-button");
     const centerSheet = document.getElementById("centerSheet");
 
-    if (loginButton && centerSheet) {
-        loginButton.addEventListener("click", (event) => {
-            event.preventDefault();
-            event.stopPropagation();
+    function handleSheet(event) {
+        event.preventDefault();
+        event.stopPropagation();
 
+        if (centerSheet.classList.contains("active")) {
+            // Sheet is open → close it
+            centerSheet.classList.remove("active");
+        } else {
+            // Sheet is closed → open it
             centerSheet.classList.add("active");
-        });
+        }
     }
 
-    if (signupButton && centerSheet) {
-        signupButton.addEventListener("click", (event) => {
-            event.preventDefault();
-            event.stopPropagation();
+    if (loginButton) {
+        loginButton.addEventListener("click", handleSheet);
+    }
 
-            centerSheet.classList.add("active");
-        });
+    if (signupButton) {
+        signupButton.addEventListener("click", handleSheet);
     }
 });
